@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Warriors</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/warrior.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/swiper.min.css">
+</head>
+<body>
+
+			<div class="navbar">
+				<ul>
+					<li class="home"><a href="/">Home</a></li>
+					<div class="rest">
+						<li><a href="/warriors">Warriors</a></li>
+						<li><a href="https://pmcares.gov.in/">Donate</a></li>
+						<li><a href="https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf">Helplines</a></li>
+					</div>
+				</ul>
+			</div>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+    	<div class="swiper-slide">
+			<div class="card card1">
+				<div class="text">
+					<h3>DOCTORS</h3>
+				</div>
+				<div class="content">
+					<p>Family doctors are often the first contacts of patients and are thus ‘gatekeepers’ in the fight against outbreaks. As trusted and respected members of communities, family doctors can improve knowledge and understanding of risks and can, through their consultations and engagement with government and leaders, communicate those risks and opportunities for mitigating them to the public in an accurate and truthful way.</p>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-slide">
+			<div class="card card2">
+				<div class="text">
+					<h3>POLICE</h3>
+				</div>
+				<div class="content">
+					<p>Healthcare workers, sanitation staff, those who run grocery and medical shops, government officials in general — all of them form the frontline in the battle against the novel coronavirus, but the police are in the frontline of the frontline.</p>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-slide">
+			<div class="card card3">
+				<div class="text">
+					<h3>LABOURERS</h3>
+				</div>
+				<div class="content">
+					<p>With the nationwide Covid-19 lockdown completing 50 days, nearly 1.35 million migrant labourers have so far returned to Uttar Pradesh by trains, buses and other means.
+Of these, an estimated 650,000 labourers returned during the months of March and April, when the lockdown was first announced, via the Delhi border. They were later ferried by UP roadways buses to their respective districts in UP.</p>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-slide">
+			<div class="card card4">
+				<div class="text">
+					<h3>NGOs</h3>
+				</div>
+				<div class="content">
+					<p>Finance Minister Nirmala Sitharaman announced a special package amounting to Rs 1.7 lakh crore for the same purpose. But, it is not just the government which is stepping forward, a slew of non-governmental organisations across the country are charging ahead to alleviate the conditions.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+			<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+			<script src="/stylesheets/swiper.min.js"></script>
+			<script>
+			    var swiper = new Swiper('.swiper-container', {
+			      effect: 'coverflow',
+			      grabCursor: true,
+			      centeredSlides: true,
+			      slidesPerView: 3,
+			      coverflowEffect: {
+			        rotate: 30,
+			        stretch: 0,
+			        depth: 100,
+			        modifier: 1,
+			        slideShadows : true,
+			      },
+			      pagination: {
+			        el: '.swiper-pagination',
+			      },
+			    });
+
+			    var lFollowX = 0,
+			    lFollowY = 0,
+			    x = 0,
+			    y = 0,
+			    friction = 1 / 30;
+
+			function moveBackground() {
+			  x += (lFollowX - x) * friction;
+			  y += (lFollowY - y) * friction;
+			  
+			  translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+			  $('.text').css({
+			    '-webit-transform': translate,
+			    '-moz-transform': translate,
+			    'transform': translate
+			  });
+
+			  window.requestAnimationFrame(moveBackground);
+			}
+
+			$(window).on('mousemove click', function(e) {
+
+			  var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+			  var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+			  lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+			  lFollowY = (10 * lMouseY) / 100;
+
+			});
+
+			moveBackground();
+				</script>
+		  </script>
+
+</body>
+</html>

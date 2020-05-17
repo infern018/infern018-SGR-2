@@ -1,0 +1,154 @@
+<%- include('partials/header') %>
+
+
+		<section>
+			<img src="/assets/bg.jpg"  id="bg">
+
+			<div class="navbar">
+				<ul>
+					<li class="home"><a href="/">Home</a></li>
+					<div class="rest">
+						<li><a href="/warriors">Warriors</a></li>
+						<li><a href="https://pmcares.gov.in/">Donate</a></li>
+						<li><a href="https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf">Helplines</a></li>
+					</div>
+				</ul>
+			</div>
+
+			<img src="/assets/moon.png" id="moon">
+			<img src="/assets/mountain.png" id="mountain">
+			<img src="/assets/road.png" id="road">
+			<div id="text">
+				<h1>COVID-19</h1>
+				<h4 class="tagline">Dawn of a perspective...</h4>
+			</div>
+		</section>
+
+
+
+
+
+
+
+		<br>
+		<div id="text2">
+			<h1>Before it's too late</h1>
+			<div class="stats">
+				<div class="unit1">
+					<span class="count" id="#confirmed"><%= data["data"]["latest_data"]["confirmed"] %></span>
+					<h2>Confirmed</h2>
+				</div>
+				<div class="unit2">
+					<span class="count" id="#deaths"><%= data["data"]["latest_data"]["deaths"] %></span>
+					<h2>Deaths</h2>
+				</div>
+				<div class="unit3">	
+					<span class="count" id="#recovered"><%= data["data"]["latest_data"]["recovered"] %></span>
+					<h2>Recovered</h2>
+				</div>
+			</div>
+		</div>
+
+		<div class="concern">
+			<img class="doctor" src="/assets/doct.svg">
+			<div class="text3">
+				<h2>Why with a death rate of only 4%, it's a concern?</h2>
+			</div>
+			<div class="concern_text">
+				<p>Covid-19 is transmitted much more readily between humans than its closest <br>relation, Sars, which caused outbreaks of serious disease in a few countries<br> in 2003. A study of hospital patients during the original Wuhan outbreak <br>showed that they were potentially infectious for up to five weeks after first<br> symptoms appeared. </p>
+			</div>
+			<button class="btn"> <a href="https://www.ft.com/content/ed3fb63e-41ce-11ea-bdb5-169ba7be433d">Read More</a></button>
+		</div>
+
+		<div class="measures">
+				<div class="mes">
+					<h2>Stay Home</h2>
+					<h2>Stay Safe</h2>
+					<img src="/assets/home-1.svg">
+				</div>
+				<div class="mes">
+					<h2>Keep</h2> 
+					<h2>Distance</h2>
+					<img src="/assets/healthcare-and-medical.svg">
+				</div>
+				<div class="mes">
+					<h2>Maintain</h2> 
+					<h2>Hygiene</h2>
+					<img src="/assets/antibacterial-gel.svg">
+				</div>
+			</div>
+		
+	</section>
+
+
+
+	
+
+
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+
+	<script>
+		$(function(){
+			$('.count').counterUp({
+				delay:17,
+				time:5000
+			});
+		});
+
+		let bg = document.getElementById("bg");
+		let moon = document.getElementById("moon");
+		let mountain = document.getElementById('mountain')
+		let road = document.getElementById('road');
+		let text = document.getElementById("text")
+
+		window.addEventListener('scroll', function(){
+			var value = window.scrollY;
+
+			bg.style.top = value*0.5 + 'px';
+			moon.style.left = -value*0.5 + 'px';
+			mountain.style.top = -value*0.15 + 'px';
+			road.style.top = value*0.15 + 'px';
+			text.style.top = value*1 + 'px';
+		})
+
+var lFollowX = 0,
+    lFollowY = 0,
+    x = 0,
+    y = 0,
+    friction = 1 / 30;
+
+function moveBackground() {
+  x += (lFollowX - x) * friction;
+  y += (lFollowY - y) * friction;
+  
+  translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+  $('.doctor').css({
+    '-webit-transform': translate,
+    '-moz-transform': translate,
+    'transform': translate
+  });
+
+  window.requestAnimationFrame(moveBackground);
+}
+
+$(window).on('mousemove click', function(e) {
+
+  var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+  var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+  lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+  lFollowY = (10 * lMouseY) / 100;
+
+});
+
+moveBackground();
+	</script>
+
+<%- include('partials/footer') %>
+
+
+
