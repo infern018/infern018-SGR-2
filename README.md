@@ -5,13 +5,14 @@ A front-end focused web-app with information related to the Corona Virus, and al
 ## Live-Link
 [Covid-19](https://covid-19inf.herokuapp.com/)
 
+## A snap of the site
+![](https://raw.githubusercontent.com/infern018/webd_work/master/Screenshot%20(30).png?token=AMPTYWCNLNGPTEWNIUY63ZS6ZNWNI)
 
 ## Dependencies
 ![](https://img.shields.io/badge/npm-v6.13.4-blue)  ![](https://img.shields.io/badge/node-v12.6.1-green)
 
 ## Setup
 Get the code by cloning this repository using git
-
 ```
 git clone  https://github.com/infern018/infern018-SGR-2
 ```
@@ -29,23 +30,23 @@ The app should now be running at https://localhost:4269.
 ## Repo Structure
 ```
 /
-|-- node-modules/				#Dependencies
+|-- node-modules/			#Dependencies
 |
 |-- public/
-		|-- assets/			#images, SVGs
-		|-- stylesheets/		#CSS files,  Js framework(swiper-slider)
+	|-- assets/			#images, SVGs
+	|-- stylesheets/		#CSS files,  Js framework(swiper-slider)
 |
 |-- views/
-		|-- partials/			#Header and footer html files 
-		|-- landing.ejs
-		|-- warrior.ejs
+	|-- partials/			#Header and footer html files 
+	|-- landing.ejs
+	|-- warrior.ejs
 |
-|-- app.js/					#the main hosting file
+|-- app.js 				#the main hosting file
 |
-|-- package.json				#project properties
-|-- package-lock.json				#dependencies
+|-- package.json			#project properties
+|-- package-lock.json			#dependencies
 |
-|-- procfile					#index for hosting web app online
+|-- procfile				#index for hosting web app online
 ```
 
 ## Partition of Classes
