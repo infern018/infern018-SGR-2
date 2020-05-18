@@ -29,23 +29,23 @@ The app should now be running at https://localhost:4269.
 ## Repo Structure
 ```
 /
-|-- node-modules/						#Dependencies
+|-- node-modules/				#Dependencies
 |
 |-- public/
-		|-- assets/							  #images, SVGs
-		|-- stylesheets/					  #CSS files,  Js framework(swiper-slider)
+		|-- assets/			#images, SVGs
+		|-- stylesheets/		#CSS files,  Js framework(swiper-slider)
 |
 |-- views/
-		|-- partials/							#Header and footer html files 
+		|-- partials/			#Header and footer html files 
 		|-- landing.ejs
 		|-- warrior.ejs
 |
-|-- app.js/									  #the main hosting file
+|-- app.js/					#the main hosting file
 |
-|-- package.json							#project properties
-|-- package-lock.json					#dependencies
+|-- package.json				#project properties
+|-- package-lock.json				#dependencies
 |
-|-- procfile									 #index for hosting web app online
+|-- procfile					#index for hosting web app online
 ```
 
 ## Partition of Classes
