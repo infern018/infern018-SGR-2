@@ -1,6 +1,6 @@
 
 # COVID-19 INF 
-A front-end focused web-app with information related to the Corona Virus and provides real time data.
+A front-end focused web-app with information related to the Corona Virus, and also provides real time data.
 
 ## Live-Link
 [Covid-19](https://covid-19inf.herokuapp.com/)
@@ -18,7 +18,7 @@ git clone  https://github.com/infern018/infern018-SGR-2
 Once downloaded, open the terminal in the project directory and install dependencies listed in package json with :
 
 ```
-npm install <dependecny>
+npm install <dependency>
 ```
  Start the app with
 ```
